@@ -1,0 +1,12 @@
+<div *ngFor='let product of all_products'>
+  <div *ngIf='product._id == product_id'>
+    <h3>{{product.title}}</h3>
+    <h4>{{product.price}}</h4>
+  </div>
+  <div *ngIf='product._id != product_id'>
+    <p>{{product.title}}</p>
+    <p>{{product.price}}</p>
+  </div>
+</div>
+<h5>Contact:</h5>
+<p>{{user}} ~ {{email}}</p>

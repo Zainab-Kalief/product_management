@@ -1,0 +1,13 @@
+<div>
+  <h3>Welcome {{user}}</h3> <a href="/log_out" >Log Out</a>
+  <form (submit)='post_product()'>
+    <p>Add Product</p>
+    Title: <input type="text" name="product" [(ngModel)]='product.title'>
+    Price: <input type="text" name="price" [(ngModel)]='product.price'>
+    <input type="submit" value="Add">
+  </form>
+</div>
+
+<div *ngFor='let product of my_products, let ind = index'>
+  <p>{{product.title}} - {{product.price}}</p>
+</div>

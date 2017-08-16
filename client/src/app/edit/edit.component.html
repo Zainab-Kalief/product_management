@@ -1,0 +1,8 @@
+<div>
+  <form (submit)='post_product()'>
+    <p>Add Product</p>
+    Title: <input type="text" name="product" [(ngModel)]='product.title'>
+    Price: <input type="text" name="price" [(ngModel)]='product.price'>
+    <input type="submit" value="Update">
+  </form>
+</div>

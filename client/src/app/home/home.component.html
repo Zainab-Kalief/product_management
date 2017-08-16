@@ -1,0 +1,28 @@
+<header>
+  <div>
+    <input type="text" name="search" placeholder="explore">
+    <button>Button</button>
+  </div>
+  <div>
+    <a [routerLink]="['/profile']" >Profile</a>
+    <a [routerLink]="['/home']">Home</a>
+    <a href="/log_out" >Log Out</a>
+  </div>
+</header>
+
+<div *ngFor='let product of all_products, let ind = index'>
+  <div *ngIf='user_id == product.user_id'>
+    <p>By {{product.user}}</p>
+    <p><strong>{{product.title}}</strong> - {{product.price}}</p>
+    <p>{{product.time}}</p>
+    <a [routerLink]="['/edit', product.product_id]">Edit</a>
+    <button (click)='delete(product.product_id, ind)'>Delete</button>
+  </div>
+  <div *ngIf='user_id != product.user_id'>
+    <p>By {{product.user}}</p>
+    <p><strong>{{product.title}}</strong> - {{product.price}}</p>
+    <p>{{product.time}}</p>
+    <a [routerLink]="['/product', product.product_id, product.user_id]">Contact</a>
+    <button>Contact</button>
+  </div>
+</div>
